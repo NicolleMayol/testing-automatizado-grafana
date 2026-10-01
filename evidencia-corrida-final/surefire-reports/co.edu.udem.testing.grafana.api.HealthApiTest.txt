@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Escenario E2 - API HTTP de Grafana
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 s -- in co.edu.udem.testing.grafana.api.HealthApiTest
