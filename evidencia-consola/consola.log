@@ -1,0 +1,399 @@
+ Container grafana-testing-grafana-1 Running 
+ Container grafana-testing-grafana-1 Waiting 
+ Container grafana-testing-grafana-1 Healthy 
+ Container grafana-testing-tests-run-eeb8c0908307 Creating 
+ Container grafana-testing-tests-run-eeb8c0908307 Created 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< co.edu.udem.testing:grafana-testing >-----------------
+[INFO] Building Grafana - pruebas automatizadas (Unidad 1) 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ grafana-testing ---
+[INFO] skip non existing resourceDirectory /work/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ grafana-testing ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ grafana-testing ---
+[INFO] skip non existing resourceDirectory /work/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ grafana-testing ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ grafana-testing ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Escenario E1 - Autenticación web en Grafana
+2026-10-01T00:50:20.008Z pw:api => BrowserType.launch started
+2026-10-01T00:50:20.486Z pw:api <= BrowserType.launch succeeded
+2026-10-01T00:50:20.496Z pw:api => Browser.newContext started
+2026-10-01T00:50:20.507Z pw:api <= Browser.newContext succeeded
+2026-10-01T00:50:20.509Z pw:api => BrowserContext.newPage started
+2026-10-01T00:50:20.603Z pw:api navigating to "http://grafana:3000/login", waiting until "load"
+2026-10-01T00:50:20.623Z pw:api   "commit" event fired
+2026-10-01T00:50:20.623Z pw:api   navigated to "http://grafana:3000/login"
+2026-10-01T00:50:20.597Z pw:api <= BrowserContext.newPage succeeded
+2026-10-01T00:50:20.598Z pw:api => Page.getByTestId started
+2026-10-01T00:50:20.599Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:20.599Z pw:api => Page.getByTestId started
+2026-10-01T00:50:20.599Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:20.600Z pw:api => Page.getByTestId started
+2026-10-01T00:50:20.600Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:20.600Z pw:api => Page.navigate started
+2026-10-01T00:50:20.952Z pw:api   "domcontentloaded" event fired
+2026-10-01T00:50:20.991Z pw:api   "load" event fired
+2026-10-01T00:50:21.000Z pw:api   navigated to "about:blank"
+2026-10-01T00:50:21.596Z pw:api   "networkidle" event fired
+2026-10-01T00:50:21.806Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Username input field\"]")
+2026-10-01T00:50:21.818Z pw:api   locator resolved to <input id=":r0:" name="user" autocapitalize="none" class="css-8tk2dk-input-input" placeholder="email or username" data-testid="data-testid Username input field"/>
+2026-10-01T00:50:21.800Z pw:api <= Page.navigate succeeded
+2026-10-01T00:50:21.802Z pw:api => Frame.fill started
+2026-10-01T00:50:21.819Z pw:api   fill("admin")
+2026-10-01T00:50:21.819Z pw:api attempting fill action
+2026-10-01T00:50:21.820Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:22.631Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Password input field\"]")
+2026-10-01T00:50:22.633Z pw:api   locator resolved to <input id=":r1:" name="password" type="password" placeholder="password" class="css-8tk2dk-input-input" autocomplete="current-password" data-testid="data-testid Password input field"/>
+2026-10-01T00:50:22.633Z pw:api   fill("UdemTesting2026")
+2026-10-01T00:50:22.633Z pw:api attempting fill action
+2026-10-01T00:50:22.634Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:22.629Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:22.630Z pw:api => Frame.fill started
+2026-10-01T00:50:23.449Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Login button\"]")
+2026-10-01T00:50:23.451Z pw:api   locator resolved to <button type="submit" aria-disabled="false" class="css-1b7vft8-button" data-testid="data-testid Login button">…</button>
+2026-10-01T00:50:23.452Z pw:api attempting click action
+2026-10-01T00:50:23.453Z pw:api   waiting for element to be visible, enabled and stable
+2026-10-01T00:50:23.441Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:23.443Z pw:api => Frame.click started
+2026-10-01T00:50:23.473Z pw:api   element is visible, enabled and stable
+2026-10-01T00:50:23.473Z pw:api   scrolling into view if needed
+2026-10-01T00:50:23.474Z pw:api   done scrolling
+2026-10-01T00:50:23.481Z pw:api   performing click action
+2026-10-01T00:50:23.499Z pw:api   click action done
+2026-10-01T00:50:23.500Z pw:api   waiting for scheduled navigations to finish
+2026-10-01T00:50:23.502Z pw:api   navigations have finished
+2026-10-01T00:50:23.577Z pw:api   "commit" event fired
+2026-10-01T00:50:23.577Z pw:api   navigated to "http://grafana:3000/"
+2026-10-01T00:50:23.702Z pw:api   "domcontentloaded" event fired
+2026-10-01T00:50:23.775Z pw:api   navigated to "about:blank"
+2026-10-01T00:50:23.821Z pw:api   "load" event fired
+2026-10-01T00:50:23.854Z pw:api   navigated to "http://grafana:3000/?from=now-6h&to=now&timezone=browser"
+2026-10-01T00:50:24.320Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:24.321Z pw:api waiting for locator(":root")
+2026-10-01T00:50:24.328Z pw:api   locator resolved to <html lang="en-US">…</html>
+2026-10-01T00:50:24.337Z pw:api → GET http://grafana:3000/api/user
+2026-10-01T00:50:24.337Z pw:api   user-agent: Mozilla/5.0 (X11; Linux aarch64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/131.0.6778.33 Safari/537.36
+2026-10-01T00:50:24.337Z pw:api   accept: */*
+2026-10-01T00:50:24.337Z pw:api   accept-encoding: gzip,deflate,br
+2026-10-01T00:50:24.337Z pw:api   cookie: grafana_session=cb6bff874deafe80ead164db71434b33; grafana_session_expiry=1790816418
+2026-10-01T00:50:24.341Z pw:api ← 200 OK
+2026-10-01T00:50:24.341Z pw:api   cache-control: no-store
+2026-10-01T00:50:24.341Z pw:api   content-type: application/json
+2026-10-01T00:50:24.341Z pw:api   x-content-type-options: nosniff
+2026-10-01T00:50:24.341Z pw:api   x-frame-options: deny
+2026-10-01T00:50:24.341Z pw:api   x-xss-protection: 1; mode=block
+2026-10-01T00:50:24.341Z pw:api   date: Thu, 01 Oct 2026 00:50:24 GMT
+2026-10-01T00:50:24.341Z pw:api   content-length: 371
+2026-10-01T00:50:24.355Z pw:api taking page screenshot
+2026-10-01T00:50:24.356Z pw:api waiting for fonts to load...
+2026-10-01T00:50:24.357Z pw:api fonts loaded
+2026-10-01T00:50:24.315Z pw:api <= Frame.click succeeded
+2026-10-01T00:50:24.317Z pw:api => Locator.expect started
+2026-10-01T00:50:24.330Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:24.330Z pw:api => APIRequestContext.fetch started
+2026-10-01T00:50:24.343Z pw:api <= APIRequestContext.fetch succeeded
+2026-10-01T00:50:24.344Z pw:api => APIResponse.body started
+2026-10-01T00:50:24.345Z pw:api <= APIResponse.body succeeded
+2026-10-01T00:50:24.352Z pw:api => Page.screenshot started
+2026-10-01T00:50:24.438Z pw:api <= Page.screenshot succeeded
+2026-10-01T00:50:24.547Z pw:api => BrowserContext.close started
+2026-10-01T00:50:24.547Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:24.548Z pw:api <= APIRequestContext.dispose succeeded
+2026-10-01T00:50:24.564Z pw:api <= BrowserContext.close succeeded
+2026-10-01T00:50:24.564Z pw:api => Video.saveAs started
+2026-10-01T00:50:24.565Z pw:api <= Video.saveAs succeeded
+2026-10-01T00:50:24.566Z pw:api => Video.delete started
+2026-10-01T00:50:24.566Z pw:api <= Video.delete succeeded
+2026-10-01T00:50:24.612Z pw:api navigating to "http://grafana:3000/login", waiting until "load"
+2026-10-01T00:50:24.621Z pw:api   "commit" event fired
+2026-10-01T00:50:24.621Z pw:api   navigated to "http://grafana:3000/login"
+2026-10-01T00:50:24.586Z pw:api => Browser.newContext started
+2026-10-01T00:50:24.590Z pw:api <= Browser.newContext succeeded
+2026-10-01T00:50:24.591Z pw:api => BrowserContext.newPage started
+2026-10-01T00:50:24.607Z pw:api <= BrowserContext.newPage succeeded
+2026-10-01T00:50:24.610Z pw:api => Page.getByTestId started
+2026-10-01T00:50:24.610Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:24.610Z pw:api => Page.getByTestId started
+2026-10-01T00:50:24.610Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:24.610Z pw:api => Page.getByTestId started
+2026-10-01T00:50:24.610Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:24.610Z pw:api => Page.navigate started
+2026-10-01T00:50:24.999Z pw:api   "domcontentloaded" event fired
+2026-10-01T00:50:25.041Z pw:api   "load" event fired
+2026-10-01T00:50:25.074Z pw:api   navigated to "about:blank"
+2026-10-01T00:50:25.692Z pw:api   "networkidle" event fired
+2026-10-01T00:50:25.854Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Username input field\"]")
+2026-10-01T00:50:25.864Z pw:api   locator resolved to <input id=":r0:" name="user" autocapitalize="none" class="css-8tk2dk-input-input" placeholder="email or username" data-testid="data-testid Username input field"/>
+2026-10-01T00:50:25.864Z pw:api   fill("qa_no_existe")
+2026-10-01T00:50:25.864Z pw:api attempting fill action
+2026-10-01T00:50:25.867Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:25.852Z pw:api <= Page.navigate succeeded
+2026-10-01T00:50:25.852Z pw:api => Frame.fill started
+2026-10-01T00:50:26.683Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Password input field\"]")
+2026-10-01T00:50:26.686Z pw:api   locator resolved to <input id=":r1:" name="password" type="password" placeholder="password" class="css-8tk2dk-input-input" autocomplete="current-password" data-testid="data-testid Password input field"/>
+2026-10-01T00:50:26.687Z pw:api   fill("CualquierClave1")
+2026-10-01T00:50:26.687Z pw:api attempting fill action
+2026-10-01T00:50:26.690Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:26.677Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:26.678Z pw:api => Frame.fill started
+2026-10-01T00:50:27.508Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Login button\"]")
+2026-10-01T00:50:27.510Z pw:api   locator resolved to <button type="submit" aria-disabled="false" class="css-1b7vft8-button" data-testid="data-testid Login button">…</button>
+2026-10-01T00:50:27.511Z pw:api attempting click action
+2026-10-01T00:50:27.511Z pw:api   waiting for element to be visible, enabled and stable
+2026-10-01T00:50:27.505Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:27.506Z pw:api => Frame.click started
+2026-10-01T00:50:27.539Z pw:api   element is visible, enabled and stable
+2026-10-01T00:50:27.539Z pw:api   scrolling into view if needed
+2026-10-01T00:50:27.539Z pw:api   done scrolling
+2026-10-01T00:50:27.542Z pw:api   performing click action
+2026-10-01T00:50:27.560Z pw:api   click action done
+2026-10-01T00:50:27.560Z pw:api   waiting for scheduled navigations to finish
+2026-10-01T00:50:27.566Z pw:api   navigations have finished
+2026-10-01T00:50:28.379Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:28.379Z pw:api waiting for getByRole(AriaRole.ALERT).filter(new Locator.FilterOptions().setHasText("Login failed"))
+2026-10-01T00:50:28.382Z pw:api   locator resolved to <div role="alert" class="css-1du4g3n" aria-label="Login failed">…</div>
+2026-10-01T00:50:28.384Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:28.385Z pw:api waiting for locator(":root")
+2026-10-01T00:50:28.386Z pw:api   locator resolved to <html lang="en-US">…</html>
+2026-10-01T00:50:28.390Z pw:api taking page screenshot
+2026-10-01T00:50:28.392Z pw:api waiting for fonts to load...
+2026-10-01T00:50:28.392Z pw:api fonts loaded
+2026-10-01T00:50:28.374Z pw:api <= Frame.click succeeded
+2026-10-01T00:50:28.376Z pw:api => Page.getByRole started
+2026-10-01T00:50:28.376Z pw:api <= Page.getByRole succeeded
+2026-10-01T00:50:28.377Z pw:api => Locator.expect started
+2026-10-01T00:50:28.383Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:28.384Z pw:api => Locator.expect started
+2026-10-01T00:50:28.387Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:28.389Z pw:api => Page.screenshot started
+2026-10-01T00:50:28.582Z pw:api <= Page.screenshot succeeded
+2026-10-01T00:50:28.672Z pw:api => BrowserContext.close started
+2026-10-01T00:50:28.672Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:28.673Z pw:api <= APIRequestContext.dispose succeeded
+2026-10-01T00:50:28.709Z pw:api <= BrowserContext.close succeeded
+2026-10-01T00:50:28.709Z pw:api => Video.saveAs started
+2026-10-01T00:50:28.712Z pw:api <= Video.saveAs succeeded
+2026-10-01T00:50:28.712Z pw:api => Video.delete started
+2026-10-01T00:50:28.712Z pw:api <= Video.delete succeeded
+2026-10-01T00:50:28.738Z pw:api navigating to "http://grafana:3000/login", waiting until "load"
+2026-10-01T00:50:28.747Z pw:api   "commit" event fired
+2026-10-01T00:50:28.747Z pw:api   navigated to "http://grafana:3000/login"
+2026-10-01T00:50:28.717Z pw:api => Browser.newContext started
+2026-10-01T00:50:28.722Z pw:api <= Browser.newContext succeeded
+2026-10-01T00:50:28.724Z pw:api => BrowserContext.newPage started
+2026-10-01T00:50:28.736Z pw:api <= BrowserContext.newPage succeeded
+2026-10-01T00:50:28.736Z pw:api => Page.getByTestId started
+2026-10-01T00:50:28.737Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:28.737Z pw:api => Page.getByTestId started
+2026-10-01T00:50:28.737Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:28.737Z pw:api => Page.getByTestId started
+2026-10-01T00:50:28.737Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:28.737Z pw:api => Page.navigate started
+2026-10-01T00:50:29.067Z pw:api   "domcontentloaded" event fired
+2026-10-01T00:50:29.117Z pw:api   "load" event fired
+2026-10-01T00:50:29.132Z pw:api   navigated to "about:blank"
+2026-10-01T00:50:29.718Z pw:api   "networkidle" event fired
+2026-10-01T00:50:29.931Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Username input field\"]")
+2026-10-01T00:50:29.951Z pw:api   locator resolved to <input id=":r0:" name="user" autocapitalize="none" class="css-8tk2dk-input-input" placeholder="email or username" data-testid="data-testid Username input field"/>
+2026-10-01T00:50:29.952Z pw:api   fill("admin")
+2026-10-01T00:50:29.952Z pw:api attempting fill action
+2026-10-01T00:50:29.954Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:29.928Z pw:api <= Page.navigate succeeded
+2026-10-01T00:50:29.928Z pw:api => Frame.fill started
+2026-10-01T00:50:30.765Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Password input field\"]")
+2026-10-01T00:50:30.766Z pw:api   locator resolved to <input id=":r1:" name="password" type="password" placeholder="password" class="css-8tk2dk-input-input" autocomplete="current-password" data-testid="data-testid Password input field"/>
+2026-10-01T00:50:30.767Z pw:api   fill("ClaveIncorrecta9")
+2026-10-01T00:50:30.767Z pw:api attempting fill action
+2026-10-01T00:50:30.767Z pw:api   waiting for element to be visible, enabled and editable
+2026-10-01T00:50:30.763Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:30.763Z pw:api => Frame.fill started
+2026-10-01T00:50:31.578Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Login button\"]")
+2026-10-01T00:50:31.580Z pw:api   locator resolved to <button type="submit" aria-disabled="false" class="css-1b7vft8-button" data-testid="data-testid Login button">…</button>
+2026-10-01T00:50:31.581Z pw:api attempting click action
+2026-10-01T00:50:31.581Z pw:api   waiting for element to be visible, enabled and stable
+2026-10-01T00:50:31.605Z pw:api   element is visible, enabled and stable
+2026-10-01T00:50:31.605Z pw:api   scrolling into view if needed
+2026-10-01T00:50:31.605Z pw:api   done scrolling
+2026-10-01T00:50:31.612Z pw:api   performing click action
+2026-10-01T00:50:31.574Z pw:api <= Frame.fill succeeded
+2026-10-01T00:50:31.575Z pw:api => Frame.click started
+2026-10-01T00:50:31.630Z pw:api   click action done
+2026-10-01T00:50:31.630Z pw:api   waiting for scheduled navigations to finish
+2026-10-01T00:50:31.635Z pw:api   navigations have finished
+2026-10-01T00:50:32.449Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:32.450Z pw:api waiting for getByRole(AriaRole.ALERT).filter(new Locator.FilterOptions().setHasText("Login failed"))
+2026-10-01T00:50:32.454Z pw:api   locator resolved to <div role="alert" class="css-1du4g3n" aria-label="Login failed">…</div>
+2026-10-01T00:50:32.462Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:32.463Z pw:api waiting for locator(":root")
+2026-10-01T00:50:32.465Z pw:api   locator resolved to <html lang="en-US">…</html>
+2026-10-01T00:50:32.472Z pw:api taking page screenshot
+2026-10-01T00:50:32.473Z pw:api waiting for fonts to load...
+2026-10-01T00:50:32.474Z pw:api fonts loaded
+2026-10-01T00:50:32.445Z pw:api <= Frame.click succeeded
+2026-10-01T00:50:32.445Z pw:api => Page.getByRole started
+2026-10-01T00:50:32.445Z pw:api <= Page.getByRole succeeded
+2026-10-01T00:50:32.446Z pw:api => Locator.expect started
+2026-10-01T00:50:32.457Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:32.458Z pw:api => Locator.expect started
+2026-10-01T00:50:32.468Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:32.469Z pw:api => Page.screenshot started
+2026-10-01T00:50:32.655Z pw:api <= Page.screenshot succeeded
+2026-10-01T00:50:32.743Z pw:api => BrowserContext.close started
+2026-10-01T00:50:32.743Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:32.743Z pw:api <= APIRequestContext.dispose succeeded
+2026-10-01T00:50:32.784Z pw:api <= BrowserContext.close succeeded
+2026-10-01T00:50:32.784Z pw:api => Video.saveAs started
+2026-10-01T00:50:32.786Z pw:api <= Video.saveAs succeeded
+2026-10-01T00:50:32.786Z pw:api => Video.delete started
+2026-10-01T00:50:32.787Z pw:api <= Video.delete succeeded
+2026-10-01T00:50:32.810Z pw:api navigating to "http://grafana:3000/login", waiting until "load"
+2026-10-01T00:50:32.819Z pw:api   "commit" event fired
+2026-10-01T00:50:32.819Z pw:api   navigated to "http://grafana:3000/login"
+2026-10-01T00:50:32.788Z pw:api => Browser.newContext started
+2026-10-01T00:50:32.794Z pw:api <= Browser.newContext succeeded
+2026-10-01T00:50:32.795Z pw:api => BrowserContext.newPage started
+2026-10-01T00:50:32.808Z pw:api <= BrowserContext.newPage succeeded
+2026-10-01T00:50:32.808Z pw:api => Page.getByTestId started
+2026-10-01T00:50:32.808Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:32.808Z pw:api => Page.getByTestId started
+2026-10-01T00:50:32.808Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:32.808Z pw:api => Page.getByTestId started
+2026-10-01T00:50:32.809Z pw:api <= Page.getByTestId succeeded
+2026-10-01T00:50:32.809Z pw:api => Page.navigate started
+2026-10-01T00:50:33.148Z pw:api   "domcontentloaded" event fired
+2026-10-01T00:50:33.189Z pw:api   "load" event fired
+2026-10-01T00:50:33.219Z pw:api   navigated to "about:blank"
+2026-10-01T00:50:33.745Z pw:api   "networkidle" event fired
+2026-10-01T00:50:34.002Z pw:api waiting for locator("internal:attr=[data-testid=\"data-testid Login button\"]")
+2026-10-01T00:50:34.014Z pw:api   locator resolved to <button type="submit" aria-disabled="false" class="css-1b7vft8-button" data-testid="data-testid Login button">…</button>
+2026-10-01T00:50:34.015Z pw:api attempting click action
+2026-10-01T00:50:34.015Z pw:api   waiting for element to be visible, enabled and stable
+2026-10-01T00:50:34.039Z pw:api   element is visible, enabled and stable
+2026-10-01T00:50:34.039Z pw:api   scrolling into view if needed
+2026-10-01T00:50:34.041Z pw:api   done scrolling
+2026-10-01T00:50:34.046Z pw:api   performing click action
+2026-10-01T00:50:34.000Z pw:api <= Page.navigate succeeded
+2026-10-01T00:50:34.001Z pw:api => Frame.click started
+2026-10-01T00:50:34.060Z pw:api   click action done
+2026-10-01T00:50:34.060Z pw:api   waiting for scheduled navigations to finish
+2026-10-01T00:50:34.060Z pw:api   navigations have finished
+2026-10-01T00:50:34.872Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:34.873Z pw:api waiting for getByText("Email or username is required", new Page.GetByTextOptions().setExact(true))
+2026-10-01T00:50:34.876Z pw:api   locator resolved to <div role="alert" class="css-9z7wq3">…</div>
+2026-10-01T00:50:34.878Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:34.878Z pw:api waiting for getByText("Password is required", new Page.GetByTextOptions().setExact(true))
+2026-10-01T00:50:34.880Z pw:api   locator resolved to <div role="alert" class="css-9z7wq3">…</div>
+2026-10-01T00:50:34.882Z pw:api Locator.expect with timeout 5000ms
+2026-10-01T00:50:34.882Z pw:api waiting for locator(":root")
+2026-10-01T00:50:34.884Z pw:api   locator resolved to <html lang="en-US">…</html>
+2026-10-01T00:50:34.887Z pw:api taking page screenshot
+2026-10-01T00:50:34.888Z pw:api waiting for fonts to load...
+2026-10-01T00:50:34.888Z pw:api fonts loaded
+2026-10-01T00:50:34.869Z pw:api <= Frame.click succeeded
+2026-10-01T00:50:34.870Z pw:api => Page.getByText started
+2026-10-01T00:50:34.871Z pw:api <= Page.getByText succeeded
+2026-10-01T00:50:34.871Z pw:api => Locator.expect started
+2026-10-01T00:50:34.877Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:34.877Z pw:api => Page.getByText started
+2026-10-01T00:50:34.877Z pw:api <= Page.getByText succeeded
+2026-10-01T00:50:34.877Z pw:api => Locator.expect started
+2026-10-01T00:50:34.881Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:34.881Z pw:api => Locator.expect started
+2026-10-01T00:50:34.884Z pw:api <= Locator.expect succeeded
+2026-10-01T00:50:34.886Z pw:api => Page.screenshot started
+2026-10-01T00:50:35.065Z pw:api <= Page.screenshot succeeded
+2026-10-01T00:50:35.114Z pw:api => BrowserContext.close started
+2026-10-01T00:50:35.114Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:35.114Z pw:api <= APIRequestContext.dispose succeeded
+2026-10-01T00:50:35.137Z pw:api <= BrowserContext.close succeeded
+2026-10-01T00:50:35.137Z pw:api => Video.saveAs started
+2026-10-01T00:50:35.138Z pw:api <= Video.saveAs succeeded
+2026-10-01T00:50:35.138Z pw:api => Video.delete started
+2026-10-01T00:50:35.139Z pw:api <= Video.delete succeeded
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.78 s -- in co.edu.udem.testing.grafana.ui.LoginUiTest
+[INFO] Running Escenario E2 - API HTTP de Grafana
+2026-10-01T00:50:35.250Z pw:api => APIRequest.newContext started
+2026-10-01T00:50:35.252Z pw:api <= APIRequest.newContext succeeded
+2026-10-01T00:50:35.253Z pw:api => APIRequest.newContext started
+2026-10-01T00:50:35.254Z pw:api <= APIRequest.newContext succeeded
+2026-10-01T00:50:35.260Z pw:api → GET http://grafana:3000/api/health
+2026-10-01T00:50:35.260Z pw:api   user-agent: Playwright/1.49.0 (arm64; ubuntu 24.04) java/21
+2026-10-01T00:50:35.260Z pw:api   accept: */*
+2026-10-01T00:50:35.261Z pw:api   accept-encoding: gzip,deflate,br
+2026-10-01T00:50:35.263Z pw:api ← 200 OK
+2026-10-01T00:50:35.263Z pw:api   cache-control: no-store
+2026-10-01T00:50:35.263Z pw:api   content-type: application/json; charset=UTF-8
+2026-10-01T00:50:35.263Z pw:api   x-content-type-options: nosniff
+2026-10-01T00:50:35.263Z pw:api   x-frame-options: deny
+2026-10-01T00:50:35.263Z pw:api   x-xss-protection: 1; mode=block
+2026-10-01T00:50:35.263Z pw:api   date: Thu, 01 Oct 2026 00:50:35 GMT
+2026-10-01T00:50:35.263Z pw:api   content-length: 101
+2026-10-01T00:50:35.255Z pw:api => APIRequestContext.fetch started
+2026-10-01T00:50:35.264Z pw:api <= APIRequestContext.fetch succeeded
+2026-10-01T00:50:35.264Z pw:api => APIResponse.body started
+2026-10-01T00:50:35.265Z pw:api <= APIResponse.body succeeded
+2026-10-01T00:50:35.265Z pw:api => APIResponse.body started
+2026-10-01T00:50:35.265Z pw:api <= APIResponse.body succeeded
+2026-10-01T00:50:35.267Z pw:api → GET http://grafana:3000/api/user
+2026-10-01T00:50:35.267Z pw:api   user-agent: Playwright/1.49.0 (arm64; ubuntu 24.04) java/21
+2026-10-01T00:50:35.267Z pw:api   accept: */*
+2026-10-01T00:50:35.267Z pw:api   accept-encoding: gzip,deflate,br
+2026-10-01T00:50:35.268Z pw:api ← 401 Unauthorized
+2026-10-01T00:50:35.268Z pw:api   cache-control: no-store
+2026-10-01T00:50:35.268Z pw:api   content-type: application/json; charset=UTF-8
+2026-10-01T00:50:35.268Z pw:api   x-content-type-options: nosniff
+2026-10-01T00:50:35.268Z pw:api   x-frame-options: deny
+2026-10-01T00:50:35.268Z pw:api   x-xss-protection: 1; mode=block
+2026-10-01T00:50:35.268Z pw:api   date: Thu, 01 Oct 2026 00:50:35 GMT
+2026-10-01T00:50:35.267Z pw:api => APIRequestContext.fetch started
+2026-10-01T00:50:35.268Z pw:api   content-length: 102
+2026-10-01T00:50:35.268Z pw:api <= APIRequestContext.fetch succeeded
+2026-10-01T00:50:35.271Z pw:api → GET http://grafana:3000/api/user
+2026-10-01T00:50:35.271Z pw:api   user-agent: Playwright/1.49.0 (arm64; ubuntu 24.04) java/21
+2026-10-01T00:50:35.271Z pw:api   accept: */*
+2026-10-01T00:50:35.271Z pw:api   accept-encoding: gzip,deflate,br
+2026-10-01T00:50:35.271Z pw:api   Authorization: Basic YWRtaW46VWRlbVRlc3RpbmcyMDI2
+2026-10-01T00:50:35.274Z pw:api ← 200 OK
+2026-10-01T00:50:35.274Z pw:api   cache-control: no-store
+2026-10-01T00:50:35.274Z pw:api   content-type: application/json
+2026-10-01T00:50:35.274Z pw:api   x-content-type-options: nosniff
+2026-10-01T00:50:35.274Z pw:api   x-frame-options: deny
+2026-10-01T00:50:35.274Z pw:api   x-xss-protection: 1; mode=block
+2026-10-01T00:50:35.274Z pw:api   date: Thu, 01 Oct 2026 00:50:35 GMT
+2026-10-01T00:50:35.274Z pw:api   content-length: 371
+2026-10-01T00:50:35.270Z pw:api => APIRequestContext.fetch started
+2026-10-01T00:50:35.275Z pw:api <= APIRequestContext.fetch succeeded
+2026-10-01T00:50:35.275Z pw:api => APIResponse.body started
+2026-10-01T00:50:35.275Z pw:api <= APIResponse.body succeeded
+2026-10-01T00:50:35.275Z pw:api => APIResponse.body started
+2026-10-01T00:50:35.275Z pw:api <= APIResponse.body succeeded
+2026-10-01T00:50:35.276Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:35.277Z pw:api <= APIRequestContext.dispose succeeded
+2026-10-01T00:50:35.277Z pw:api => APIRequestContext.dispose started
+2026-10-01T00:50:35.277Z pw:api <= APIRequestContext.dispose succeeded
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in co.edu.udem.testing.grafana.api.HealthApiTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.552 s
+[INFO] Finished at: 2026-10-01T00:50:35Z
+[INFO] ------------------------------------------------------------------------
