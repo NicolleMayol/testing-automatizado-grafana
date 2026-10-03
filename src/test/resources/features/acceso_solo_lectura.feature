@@ -13,10 +13,10 @@ Característica: Acceso de solo lectura para ingenieros de guardia
 
   Antecedentes:
     Dado que existe el tablero "Guardia SRE - Servicios críticos"
-    Y que "laura.guardia" tiene el rol "Viewer"
 
   @CA1 @ui
   Escenario: La ingeniera de guardia consulta el tablero del equipo
+    Dado que "laura.guardia" tiene el rol "Viewer"
     Cuando "laura.guardia" inicia sesión en Grafana
     Y abre el tablero "Guardia SRE - Servicios críticos"
     Entonces ve el tablero "Guardia SRE - Servicios críticos"
@@ -35,12 +35,14 @@ Característica: Acceso de solo lectura para ingenieros de guardia
 
   @CA3 @api
   Escenario: Grafana rechaza que la ingeniera de guardia modifique el tablero
+    Dado que "laura.guardia" tiene el rol "Viewer"
     Cuando "laura.guardia" intenta cambiar el título del tablero "Guardia SRE - Servicios críticos" por "Tablero modificado"
     Entonces Grafana rechaza la acción por falta de permisos
     Y el tablero "Guardia SRE - Servicios críticos" conserva su título
 
   @CA4 @api
   Escenario: La ingeniera de guardia no puede crear cuentas de usuario
+    Dado que "laura.guardia" tiene el rol "Viewer"
     Cuando "laura.guardia" intenta crear la cuenta "intruso.qa"
     Entonces Grafana rechaza la acción por falta de permisos
     Y la cuenta "intruso.qa" no existe
