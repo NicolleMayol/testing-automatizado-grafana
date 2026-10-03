@@ -1,6 +1,6 @@
 # Grafana — pruebas automatizadas (JUnit 5 + Playwright Java)
 
-Actividad evaluativa Unidad 1 · Testing Automatizado con IA.
+Testing Automatizado con IA · Unidad 1 (JUnit 5 + Playwright) y Unidad 2 (BDD con Cucumber).
 
 ## Requisitos
 - Docker Desktop (o Rancher Desktop) corriendo. **No necesitas Java ni Maven**: la imagen `mcr.microsoft.com/playwright/java` ya trae JDK, Maven y Chromium.
@@ -53,3 +53,26 @@ docker compose down
 | `evidencia-corrida-1/` | Reportes de la primera corrida (6/7, TC-06 falló por un defecto del script) |
 | `evidencia-corrida-final/` | Reportes y evidencia de la corrida final (7/7) |
 | `evidencia-video/` | Videos en cámara lenta (`SLOW_MO=800`) usados en el video de la entrega |
+
+## Unidad 2: BDD con Cucumber
+
+Historia **HU-SRE-01**, acceso de solo lectura para ingenieros de guardia:
+
+> Como líder del equipo SRE, quiero dar a los ingenieros de guardia acceso de solo lectura a los tableros de Grafana, para que consulten el estado de los servicios durante un incidente sin riesgo de modificar los tableros por error.
+
+| Archivo | Contenido |
+|---|---|
+| `src/test/resources/features/acceso_solo_lectura.feature` | Historia, criterios de aceptación y escenarios en Gherkin (español) |
+| `src/test/java/.../bdd/AccesoSoloLecturaSteps.java` | Definiciones de pasos (Playwright para UI y API) |
+| `src/test/java/.../bdd/GrafanaAdminApi.java` | Preparación de datos: tablero y cuentas por API |
+| `src/test/java/.../bdd/RunCucumberTest.java` | Runner de Cucumber sobre JUnit Platform |
+
+Cada escenario lleva la etiqueta del criterio que verifica (`@CA1` a `@CA4`).
+
+```bash
+./run-bdd.sh                 # solo los escenarios BDD
+SLOW_MO=800 ./run-bdd.sh     # en cámara lenta, para grabar
+./run-tests.sh               # todo: Unidad 1 + Unidad 2
+```
+
+Reporte HTML de Cucumber: `target/cucumber/reporte-bdd.html` (incluye la captura final de cada escenario de UI).

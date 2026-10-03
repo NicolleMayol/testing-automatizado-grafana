@@ -7,7 +7,7 @@
   <groupId>co.edu.udem.testing</groupId>
   <artifactId>grafana-testing</artifactId>
   <version>1.0.0</version>
-  <name>Grafana - pruebas automatizadas (Unidad 1)</name>
+  <name>Grafana - pruebas automatizadas (Unidades 1 y 2)</name>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
@@ -15,7 +15,27 @@
     <!-- Debe coincidir con la imagen mcr.microsoft.com/playwright/java:v1.49.0-noble -->
     <playwright.version>1.49.0</playwright.version>
     <junit.version>5.11.3</junit.version>
+    <cucumber.version>7.20.1</cucumber.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-bom</artifactId>
+        <version>${cucumber.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -27,7 +47,22 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Unidad 2: BDD con Cucumber sobre JUnit Platform -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit-platform-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-suite</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Levantar Grafana y ejecutar la suite (JUnit 5 + Playwright)
+      - name: Levantar Grafana y ejecutar la suite (JUnit 5 + Cucumber + Playwright)
         run: bash run-tests.sh
 
       - name: Publicar evidencia (reportes JUnit, videos, capturas, trazas)
@@ -23,6 +23,8 @@ jobs:
           path: |
             target/surefire-reports
             target/evidence
+            target/cucumber
+            target/evidence-bdd
 
       - name: Apagar Grafana
         if: always()
