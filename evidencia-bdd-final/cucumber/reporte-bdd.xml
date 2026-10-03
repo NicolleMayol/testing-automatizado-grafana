@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.334" tests="5" skipped="0" failures="0" errors="0">
-<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia consulta el tablero del equipo" time="3.021">
+<testsuite name="Cucumber" time="7.303" tests="5" skipped="0" failures="0" errors="0">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia consulta el tablero del equipo" time="3.055">
 <system-out><![CDATA[
 Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
-Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Dado que "laura.guardia" tiene el rol "Viewer"..............................passed
 Cuando "laura.guardia" inicia sesión en Grafana.............................passed
 Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
 Entonces ve el tablero "Guardia SRE - Servicios críticos"...................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.1" time="1.961">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.1" time="1.865">
 <system-out><![CDATA[
 Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
-Y que "laura.guardia" tiene el rol "Viewer".................................passed
 Dado que "laura.guardia" tiene el rol "Viewer"..............................passed
 Cuando "laura.guardia" inicia sesión en Grafana.............................passed
 Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
 Entonces la opción de editar el tablero está "oculta".......................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.2" time="1.932">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.2" time="1.93">
 <system-out><![CDATA[
 Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
-Y que "laura.guardia" tiene el rol "Viewer".................................passed
 Dado que "andres.sre" tiene el rol "Editor".................................passed
 Cuando "andres.sre" inicia sesión en Grafana................................passed
 Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
 Entonces la opción de editar el tablero está "disponible"...................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="Grafana rechaza que la ingeniera de guardia modifique el tablero" time="0.135">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="Grafana rechaza que la ingeniera de guardia modifique el tablero" time="0.156">
 <system-out><![CDATA[
 Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
-Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Dado que "laura.guardia" tiene el rol "Viewer"..............................passed
 Cuando "laura.guardia" intenta cambiar el título del tablero "Guardia SRE - Servicios críticos" por "Tablero modificado".passed
 Entonces Grafana rechaza la acción por falta de permisos....................passed
 Y el tablero "Guardia SRE - Servicios críticos" conserva su título..........passed
 ]]></system-out>
 </testcase>
-<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia no puede crear cuentas de usuario" time="0.138">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia no puede crear cuentas de usuario" time="0.148">
 <system-out><![CDATA[
 Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
-Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Dado que "laura.guardia" tiene el rol "Viewer"..............................passed
 Cuando "laura.guardia" intenta crear la cuenta "intruso.qa".................passed
 Entonces Grafana rechaza la acción por falta de permisos....................passed
 Y la cuenta "intruso.qa" no existe..........................................passed
