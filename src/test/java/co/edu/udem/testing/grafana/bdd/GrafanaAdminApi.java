@@ -10,7 +10,10 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 
 import java.nio.charset.StandardCharsets;
+import com.google.gson.JsonElement;
+
 import java.util.Base64;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -99,6 +102,28 @@ final class GrafanaAdminApi {
             int id = json(res).get("id").getAsInt();
             check(admin.delete("/api/admin/users/" + id), 200, "borrar la cuenta " + login);
         }
+    }
+
+    /** login -> userId de todas las cuentas de la organización. */
+    Map<String, Integer> orgUsers() {
+        APIResponse res = admin.get("/api/org/users");
+        check(res, 200, "listar las cuentas de la organización");
+        Map<String, Integer> users = new HashMap<>();
+        for (JsonElement e : JsonParser.parseString(res.text()).getAsJsonArray()) {
+            JsonObject u = e.getAsJsonObject();
+            users.put(u.get("login").getAsString(), u.get("userId").getAsInt());
+        }
+        return users;
+    }
+
+    /** Deja la organización con exactamente estas cuentas (más la de administración del laboratorio). */
+    void syncOrgUsers(Map<String, String> loginToRole) {
+        orgUsers().forEach((login, id) -> {
+            if (!login.equals(Config.USER) && !loginToRole.containsKey(login)) {
+                check(admin.delete("/api/admin/users/" + id), 200, "borrar la cuenta " + login);
+            }
+        });
+        loginToRole.forEach(this::ensureUser);
     }
 
     void dispose() {
