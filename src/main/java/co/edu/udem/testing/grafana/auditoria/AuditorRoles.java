@@ -12,8 +12,8 @@ public class AuditorRoles {
 
     public List<Hallazgo> auditar(Collection<CuentaGrafana> cuentas, PoliticaAccesos politica) {
         return cuentas.stream()
-                .filter(c -> c.rol().excede(politica.rolMaximoPara(c.login())))
                 .map(c -> new Hallazgo(c.login(), c.rol(), politica.rolMaximoPara(c.login())))
+                .filter(h -> h.rolActual().excede(h.rolMaximo()))
                 .sorted(ORDEN_REPORTE)
                 .toList();
     }
