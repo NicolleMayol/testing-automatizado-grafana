@@ -150,7 +150,9 @@ public class AccesoSoloLecturaSteps {
 
     @Entonces("ve el tablero {string}")
     public void veElTablero(String title) {
-        assertThat(page).hasTitle(Pattern.compile(Pattern.quote(title)));
+        // Pattern.quote() genera \Q...\E, que el motor de regex de JavaScript (donde Playwright
+        // evalúa la aserción) no soporta. Se escapan los caracteres especiales uno por uno.
+        assertThat(page).hasTitle(Pattern.compile(jsRegexLiteral(title)));
         assertThat(page.getByText("Consulta este tablero durante la guardia")).isVisible();
     }
 
@@ -203,6 +205,11 @@ public class AccesoSoloLecturaSteps {
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("No hay un tablero abierto: " + page.url()));
+    }
+
+    /** Escapa un texto para usarlo como literal en una expresión regular de JavaScript. */
+    private static String jsRegexLiteral(String text) {
+        return text.replaceAll("[\\\\^$.|?*+()\\[\\]{}-]", "\\\\$0");
     }
 
     private static String evidenceName(Scenario scenario) {
