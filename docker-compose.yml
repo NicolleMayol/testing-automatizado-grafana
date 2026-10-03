@@ -34,7 +34,7 @@ services:
       GRAFANA_PASSWORD: "UdemTesting2026"
       HEADLESS: "true"
       PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
-    command: ["mvn", "-B", "-ntp", "test"]
+    command: ["mvn", "-B", "-ntp", "verify"]
 
 volumes:
   m2-cache:
