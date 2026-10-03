@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="24.859" tests="5" skipped="0" failures="3" errors="0">
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia consulta el tablero del equipo" time="9.684">
+<failure type="org.opentest4j.AssertionFailedError" message="Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(&quot;:root&quot;)
+    2 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Dashboards - Grafana&quot;
+    6 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Guardia SRE - Servicios críticos - Dashboards - Grafana&quot;">
+<![CDATA[org.opentest4j.AssertionFailedError: Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(":root")
+    2 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Dashboards - Grafana"
+    6 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Guardia SRE - Servicios críticos - Dashboards - Grafana"
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:74)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:51)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:42)
+	at com.microsoft.playwright.impl.PageAssertionsImpl.hasTitle(PageAssertionsImpl.java:51)
+	at com.microsoft.playwright.assertions.PageAssertions.hasTitle(PageAssertions.java:129)
+	at co.edu.udem.testing.grafana.bdd.AccesoSoloLecturaSteps.veElTablero(AccesoSoloLecturaSteps.java:153)
+	at ✽.ve el tablero "Guardia SRE - Servicios críticos"(classpath:features/acceso_solo_lectura.feature:22)
+]]>
+</failure>
+<system-out><![CDATA[
+Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
+Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Cuando "laura.guardia" inicia sesión en Grafana.............................passed
+Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
+Entonces ve el tablero "Guardia SRE - Servicios críticos"...................failed
+]]></system-out>
+</testcase>
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.1" time="7.405">
+<failure type="org.opentest4j.AssertionFailedError" message="Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(&quot;:root&quot;)
+    2 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Dashboards - Grafana&quot;
+    7 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Guardia SRE - Servicios críticos - Dashboards - Grafana&quot;">
+<![CDATA[org.opentest4j.AssertionFailedError: Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(":root")
+    2 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Dashboards - Grafana"
+    7 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Guardia SRE - Servicios críticos - Dashboards - Grafana"
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:74)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:51)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:42)
+	at com.microsoft.playwright.impl.PageAssertionsImpl.hasTitle(PageAssertionsImpl.java:51)
+	at com.microsoft.playwright.assertions.PageAssertions.hasTitle(PageAssertions.java:129)
+	at co.edu.udem.testing.grafana.bdd.AccesoSoloLecturaSteps.veElTablero(AccesoSoloLecturaSteps.java:153)
+	at co.edu.udem.testing.grafana.bdd.AccesoSoloLecturaSteps.opcionDeEditar(AccesoSoloLecturaSteps.java:160)
+	at ✽.la opción de editar el tablero está "oculta"(classpath:features/acceso_solo_lectura.feature:29)
+]]>
+</failure>
+<system-out><![CDATA[
+Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
+Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Dado que "laura.guardia" tiene el rol "Viewer"..............................passed
+Cuando "laura.guardia" inicia sesión en Grafana.............................passed
+Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
+Entonces la opción de editar el tablero está "oculta".......................failed
+]]></system-out>
+</testcase>
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La opción de editar el tablero depende del rol - #1.2" time="7.323">
+<failure type="org.opentest4j.AssertionFailedError" message="Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(&quot;:root&quot;)
+    2 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Dashboards - Grafana&quot;
+    7 × locator resolved to &lt;html lang=&quot;en-US&quot;&gt;…&lt;/html&gt;
+      - unexpected value &quot;Guardia SRE - Servicios críticos - Dashboards - Grafana&quot;">
+<![CDATA[org.opentest4j.AssertionFailedError: Page title expected to match regex: \QGuardia SRE - Servicios críticos\E
+Received: Guardia SRE - Servicios críticos - Dashboards - Grafana
+
+Call log:
+  - Locator.expect with timeout 5000ms
+  - waiting for locator(":root")
+    2 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Dashboards - Grafana"
+    7 × locator resolved to <html lang="en-US">…</html>
+      - unexpected value "Guardia SRE - Servicios críticos - Dashboards - Grafana"
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:74)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:51)
+	at com.microsoft.playwright.impl.AssertionsBase.expectImpl(AssertionsBase.java:42)
+	at com.microsoft.playwright.impl.PageAssertionsImpl.hasTitle(PageAssertionsImpl.java:51)
+	at com.microsoft.playwright.assertions.PageAssertions.hasTitle(PageAssertions.java:129)
+	at co.edu.udem.testing.grafana.bdd.AccesoSoloLecturaSteps.veElTablero(AccesoSoloLecturaSteps.java:153)
+	at co.edu.udem.testing.grafana.bdd.AccesoSoloLecturaSteps.opcionDeEditar(AccesoSoloLecturaSteps.java:160)
+	at ✽.la opción de editar el tablero está "disponible"(classpath:features/acceso_solo_lectura.feature:29)
+]]>
+</failure>
+<system-out><![CDATA[
+Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
+Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Dado que "andres.sre" tiene el rol "Editor".................................passed
+Cuando "andres.sre" inicia sesión en Grafana................................passed
+Y abre el tablero "Guardia SRE - Servicios críticos"........................passed
+Entonces la opción de editar el tablero está "disponible"...................failed
+]]></system-out>
+</testcase>
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="Grafana rechaza que la ingeniera de guardia modifique el tablero" time="0.152">
+<system-out><![CDATA[
+Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
+Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Cuando "laura.guardia" intenta cambiar el título del tablero "Guardia SRE - Servicios críticos" por "Tablero modificado".passed
+Entonces Grafana rechaza la acción por falta de permisos....................passed
+Y el tablero "Guardia SRE - Servicios críticos" conserva su título..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Acceso de solo lectura para ingenieros de guardia" name="La ingeniera de guardia no puede crear cuentas de usuario" time="0.131">
+<system-out><![CDATA[
+Dado que existe el tablero "Guardia SRE - Servicios críticos"...............passed
+Y que "laura.guardia" tiene el rol "Viewer".................................passed
+Cuando "laura.guardia" intenta crear la cuenta "intruso.qa".................passed
+Entonces Grafana rechaza la acción por falta de permisos....................passed
+Y la cuenta "intruso.qa" no existe..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
