@@ -27,7 +27,12 @@ jobs:
       - name: Pruebas unitarias con JaCoCo (umbral 80 % líneas, 70 % ramas)
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
-        run: mvn -B -ntp verify -Dgroups=unit
+        # Solo las clases del auditor: la @Suite de Cucumber no tiene escenarios @unit y
+        # JUnit Platform la marca como error cuando una suite queda vacía (failIfNoTests).
+        run: >
+          mvn -B -ntp verify -Dgroups=unit
+          -Dtest='co.edu.udem.testing.grafana.auditoria.**'
+          -Dsurefire.failIfNoSpecifiedTests=false
 
       - name: Resumen de cobertura
         if: always()

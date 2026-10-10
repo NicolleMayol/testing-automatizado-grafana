@@ -22,6 +22,18 @@ else
 fi
 msg="Pruebas: ${tests} ejecutadas, ${fallos} fallos, ${errores} errores, ${omitidas} omitidas | Cobertura auditor: ${cov}"
 echo "::notice title=${etapa}::${msg}"
+# Cada prueba fallida como anotación (los logs del job no siempre están a mano).
+for f in target/surefire-reports/TEST-*.xml; do
+  [ -f "$f" ] || continue
+  python3 - "$f" <<'PY'
+import sys, xml.etree.ElementTree as ET
+for tc in ET.parse(sys.argv[1]).getroot().iter("testcase"):
+    for tipo in ("failure", "error"):
+        for e in tc.findall(tipo):
+            msg = (e.get("message") or e.text or "").strip().replace("\n", " ")[:600]
+            print(f"::error title={tipo}: {tc.get('name','')[:80]}::{tc.get('classname','')} - {msg}")
+PY
+done
 {
   echo "### ${etapa}"
   echo ""
