@@ -89,8 +89,9 @@ jobs:
           java-version: "21"
           cache: maven
 
+      # El plan gratuito de SonarCloud analiza solo la rama principal y los pull requests.
       - name: Análisis SonarCloud y quality gate
-        if: success() && env.SONAR_TOKEN != ''
+        if: success() && env.SONAR_TOKEN != '' && (github.ref == 'refs/heads/main' || github.event_name == 'pull_request')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -107,7 +108,7 @@ jobs:
           exit "$estado"
 
       - name: Métricas de Sonar en el resumen
-        if: always() && env.SONAR_TOKEN != ''
+        if: always() && env.SONAR_TOKEN != '' && (github.ref == 'refs/heads/main' || github.event_name == 'pull_request')
         run: bash ci/metricas-sonar.sh
 
       - name: Apagar Grafana
