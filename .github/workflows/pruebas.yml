@@ -92,12 +92,18 @@ jobs:
         if: success() && env.SONAR_TOKEN != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >
-          mvn -B -ntp org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar
-          -Dsonar.organization=$SONAR_ORG
-          -Dsonar.projectKey=$SONAR_PROJECT
-          -Dsonar.qualitygate.wait=true
-          -Dsonar.qualitygate.timeout=300
+        run: |
+          set +e
+          mvn -B -ntp org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar \
+            -Dsonar.organization="$SONAR_ORG" \
+            -Dsonar.projectKey="$SONAR_PROJECT" \
+            -Dsonar.qualitygate.wait=true \
+            -Dsonar.qualitygate.timeout=300 2>&1 | tee sonar.log
+          estado=${PIPESTATUS[0]}
+          grep -E "\[ERROR\]|QUALITY GATE|ANALYSIS SUCCESSFUL" sonar.log | head -15 | while IFS= read -r l; do
+            echo "::notice title=Sonar log::$l"
+          done
+          exit "$estado"
 
       - name: Métricas de Sonar en el resumen
         if: always() && env.SONAR_TOKEN != ''
