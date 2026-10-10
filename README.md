@@ -1,6 +1,6 @@
 # Grafana — pruebas automatizadas (JUnit 5 + Playwright Java)
 
-Testing Automatizado con IA · Unidad 1 (JUnit 5 + Playwright) y Unidad 2 (BDD con Cucumber).
+Testing Automatizado con IA · Unidad 1 (JUnit 5 + Playwright), Unidad 2 (BDD con Cucumber) y Unidad 3 (TDD + BDD en CI/CD con JaCoCo y SonarCloud).
 
 ## Requisitos
 - Docker Desktop (o Rancher Desktop) corriendo. **No necesitas Java ni Maven**: la imagen `mcr.microsoft.com/playwright/java` ya trae JDK, Maven y Chromium.
@@ -76,3 +76,26 @@ SLOW_MO=800 ./run-bdd.sh     # en cámara lenta, para grabar
 ```
 
 Reporte HTML de Cucumber: `target/cucumber/reporte-bdd.html` (incluye la captura final de cada escenario de UI).
+
+## Unidad 3: auditor de roles con TDD + BDD en CI/CD
+
+Historia **HU-SRE-02**: como líder del equipo SRE, quiero un reporte automático de las cuentas cuyo rol supera lo que permite la política de guardia, para corregir privilegios de más antes de que se conviertan en un riesgo o en un hallazgo de auditoría.
+
+| Capa | Archivo |
+|---|---|
+| Código de producción | `src/main/java/.../auditoria/` (`Rol`, `PoliticaAccesos`, `AuditorRoles`, `ClienteGrafanaApi`, `ReporteAuditoria`, `AuditorCli`) |
+| TDD (unitarias, `@Tag("unit")`) | `src/test/java/.../auditoria/*Test.java` |
+| BDD (Cucumber) | `src/test/resources/features/auditoria_roles.feature` + `bdd/AuditoriaRolesSteps.java` |
+| Política de ejemplo | `politica-guardia.properties` |
+| Pipeline | `.github/workflows/pruebas.yml` (TDD → BDD/E2E → SonarCloud con quality gate) |
+
+```bash
+mvn -B verify -Dgroups=unit     # solo TDD, con JaCoCo y umbral de cobertura (80 % líneas, 70 % ramas)
+./run-tests.sh                   # suite completa contra Grafana en Docker
+```
+
+El historial de commits muestra los ciclos rojo → verde → refactor de TDD dentro del ciclo externo de BDD.
+
+### Uso del auditor en un pipeline
+
+`AuditorCli` termina con código `0` si la auditoría queda aprobada, `2` si encuentra cuentas con privilegios de más y `1` si no pudo consultar Grafana. Así puede correr como un job programado que falla cuando aparece una desviación de permisos.

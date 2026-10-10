@@ -7,7 +7,7 @@
   <groupId>co.edu.udem.testing</groupId>
   <artifactId>grafana-testing</artifactId>
   <version>1.0.0</version>
-  <name>Grafana - pruebas automatizadas (Unidades 1 y 2)</name>
+  <name>Grafana - pruebas automatizadas y auditor de roles (Unidades 1 a 3)</name>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
@@ -16,6 +16,12 @@
     <playwright.version>1.49.0</playwright.version>
     <junit.version>5.11.3</junit.version>
     <cucumber.version>7.20.1</cucumber.version>
+    <gson.version>2.11.0</gson.version>
+    <jacoco.version>0.8.12</jacoco.version>
+    <!-- SonarCloud: las claves se pasan desde el pipeline -->
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.junit.reportPaths>${project.build.directory}/surefire-reports</sonar.junit.reportPaths>
   </properties>
 
   <dependencyManagement>
@@ -38,6 +44,12 @@
   </dependencyManagement>
 
   <dependencies>
+    <!-- Unidad 3: código de producción del auditor de roles -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>${gson.version}</version>
+    </dependency>
     <dependency>
       <groupId>com.microsoft.playwright</groupId>
       <artifactId>playwright</artifactId>
@@ -86,6 +98,52 @@
             <usePhrasedClassNameInRunning>true</usePhrasedClassNameInRunning>
           </statelessTestsetInfoReporter>
         </configuration>
+      </plugin>
+      <!-- Unidad 3: cobertura con JaCoCo y umbral mínimo (quality gate local) -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <configuration>
+          <includes>
+            <include>co/edu/udem/testing/grafana/auditoria/**</include>
+          </includes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>preparar-agente</id>
+            <goals><goal>prepare-agent</goal></goals>
+          </execution>
+          <execution>
+            <id>reporte</id>
+            <phase>verify</phase>
+            <goals><goal>report</goal></goals>
+          </execution>
+          <execution>
+            <id>umbral-cobertura</id>
+            <phase>verify</phase>
+            <goals><goal>check</goal></goals>
+            <configuration>
+              <rules>
+                <rule>
+                  <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>LINE</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.80</minimum>
+                    </limit>
+                    <limit>
+                      <counter>BRANCH</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.70</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
